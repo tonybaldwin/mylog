@@ -16,6 +16,10 @@ chmod +x $HOME/bin/mylog
 
 echo "Creating config files ... "
 read -p "What is your prefered editor? (default is vim) " ed
+echo "The following are only needed if you use and will post to friendica."
+read -p "Friendica username: " $fuser
+read -p "Friendica password: " $fpass
+read -p "Friendica site (include https://yourfriendicasite.tld): " $fsite
 if [[ $ed != "" ]]; then
 	editor=$ed
 else
