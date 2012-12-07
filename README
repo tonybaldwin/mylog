@@ -1,0 +1,40 @@
+mylog.sh
+a simple dream log management system in bash
+by tony baldwin - www.tonybaldwin.me
+
+mylog site: http://tonyb.us/mylog
+
+INSTALLATION:
+run the install.sh
+
+HOW TO USE mylog:
+
+mylog - opens a new mylog file to edit in your chosen editor.
+mylog r - reads all entries (cats all files in the dir, pipes to less)
+mylog r yyyymmdd - reads entries from date yyyymmdd. One can specify just yyyymm, or just yyyy, even.
+mylog l - lists all mylog entries. Like r, it can be narrowed down with date parameters.
+mylog e filename - opens mylog file filename for editing.
+mylog v filename - opens mylog file filename for viewing.
+mylog s searchterm - searches for searchterm in dream entries.
+mylog h - displays this help message.
+mylog management system by tony baldwin, http://tonybaldwin.me, released according to GPL v. 3
+
+
+MORE INFORMATION: A more thorough installation and use description 
+is on my wiki at http://tonyb.us/mylog
+
+LICENSE:
+This program was written by anthony baldwin - tony@tonybaldwin.org 
+This program is free software; you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by 
+the Free Software Foundation; either version 2 of the License, or 
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
