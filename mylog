@@ -1,4 +1,4 @@
-#!/bin/bash
+bin/bash
 
 #################################
 # mylog - by tony baldwin       #
@@ -70,7 +70,7 @@ else
 			echo "Success!"
 		read -p "Shall we have a look in your a browser now? (y/n): " op
 			if [ $op = "y" ]; then
-			iceweasel http://free-haven.org/profile/tony
+			xdg-open $fsite/u/$fuser
 			fi
 		fi
 	fi
