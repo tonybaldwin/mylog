@@ -45,6 +45,8 @@ if [[ $1 = s ]]; then
 	grep -iw $2 *
 
 else
+	date=`date`
+	echo -e "\n$date\n\nWRITE HERE\n\n-------------------" > $filedate.mylog
 	$editor $filedate.mylog
 	read -p "Post to my free-haven? (y/n) " post
 	if [[ $post = y ]]; then
