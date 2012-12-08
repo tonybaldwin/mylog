@@ -23,6 +23,7 @@ if [[ $1 = h ]]; then
 	echo "mylog - opens a new mylog file to edit in your editor.
 mylog e filename - opens log entry with filename for editing. Must use full filename.
 mylog v filename - opens log entry with filename for viewing. Must use full filename.
+mylog d filename - delete mylog file with filename.
 mylog r - reads all entries (cats all files in the dir, pipes to less)
 mylog r yyyymmdd - reads entries from date yyyymmdd. One can specify just yyyymm, or just yyyy, even.
 mylog l - lists all mylog entries. Like r, it can be narrowed down with date parameters.
@@ -37,6 +38,17 @@ if [[ $1 = l ]]; then
 	else
 		ls -1t
 	fi
+else
+if [[ $1 = d ]]; then
+	read -p "Are you certain you wish to delete $2? " dr
+	if [[ $dr = y ]]; then
+		rm $2
+	else
+		exit
+	fi
+else
+if [[ $1 = v ]]; then
+	less $2
 else
 if [[ $1 = e ]]; then
 	$editor $2
@@ -74,6 +86,8 @@ else
 			fi
 		fi
 	fi
+fi
+fi
 fi
 fi
 fi
