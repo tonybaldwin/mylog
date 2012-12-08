@@ -15,6 +15,7 @@ mylog r yyyymmdd - reads entries from date yyyymmdd. One can specify just yyyymm
 mylog l - lists all mylog entries. Like r, it can be narrowed down with date parameters.
 mylog e filename - opens mylog file filename for editing.
 mylog v filename - opens mylog file filename for viewing.
+mylog d filename - deletes mylog file filename.
 mylog s searchterm - searches for searchterm in dream entries.
 mylog h - displays this help message.
 mylog management system by tony baldwin, http://tonybaldwin.me, released according to GPL v. 3
