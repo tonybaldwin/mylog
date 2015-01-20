@@ -60,32 +60,63 @@ else
 	date=`date`
 	echo -e "\n$date\n\nWRITE HERE\n\n-------------------" > $filedate.mylog
 	$editor $filedate.mylog
-	read -p "Post to my free-haven? (y/n) " post
-	if [[ $post = y ]]; then
-		echo -e "\nposted with mylog - http://tonyb.us/mylog\n--\n" >> ~/.mylog/$filedate.my
+	if [[ $rplug = y ]]; then
+		read -p "Post to my redmatrix? (y/n) " post
+		if [[ $post = y ]]; then
+			read -p "which channel? " chan
+			read -p "Will we be crossposting?  (y/n) " xpo
+			if [[ $xpo == "y" ]]; then
+				read -p "xpost to friendica? (auto to pump/ltree) (y/n) " fxq
+				if [[ $fxq == "y" ]]; then
+				fx=1
+				fi
+				read -p "xpost to pumpio? (y/n) " ppx
+				if [[ $ppx == "y" ]]; then
+				pp=1
+				 fi
+				read -p "xpost to wordpress? (y/n) " wpp
+				if [[ $wpp == "y" ]]; then
+				wp=1
+				fi
+				read -p "xpost to livejournal? (y/n) " ljp
+				if [[ $ljp == "y" ]]; then
+				lj=1
+				fi
+				read -p "xpost to insanejournal? (y/n) " ijp
+				if [[ $ijp == "y" ]]; then
+				ij=1
+				fi
+				read -p "xpost to dreamwidth? (y/n) " dwp
+				if [[ $dwp == "y" ]]; then
+				dw=1
+				fi
+				read -p "xpost to libertree? (y/n) " ltp
+				if [[ $ltp == "y" ]]; then
+				lt=1
+				fi
+				read -p "xpost to statusnet? (y/n) " snp
+				if [[ $snp == "y" ]]; then
+				sn=1
+		else	
+			let fx=pp=wp=ij=lj=dw=lt=sn=0
+		fi
+		echo -e "\nposted with mylog - https://github.com/tonybaldwin/mylog\n--\n" >> ~/.mylog/$filedate.my
 		ud="$(cat ~/.mylog/$filedate.mylog)"
-		title="from mylog"
-		echo "would you like to crosspost to "
-		read -p "statusnet? " snet
-		read -p "twitter? " twit
-		read -p "facebook? " fb
-		read -p "dreamwidth?  " dw
-		read -p "livejournal? " lj
-		read -p "insanejournal?" ij
-		read -p "tumblr? " tum
-		read -p "posterous? " pos
-		read -p "wordpress? " wp 
-		if [[ $(curl --ssl -u $fuser:$fpass -d "status=$ud&title=$title&ljpost_enable=$lj&ijpost_enable=$ij&posterous_enable=$pos&dwpost_enable=$dw&wppost_enable=$wp&tumblr_enable=$tum&facebook_enable=$fb&twitter_enable=$twit&statusnet_enable=$snet&source=mylog.sh" $fsite/api/statuses/update.xml | grep error) ]]; then
+# and this is the curl command that sends the update to the server
+ 
+		if [[ $(curl --ssl -u $ruser:$rpass -d "status=$ud&title=$title&channel=$chan&category=$cats&rtof_enable=$fx&pumpio_enable=$pp&ljpost_enable=$lj&ijpost_enable=$ij&dwpost_enable=$dw&wppost_enable=$wp&libertree_enable=$lt&statusnet_enable=$sn&app=reddi.sh" $rurl/api/statuses/update.xml | grep error) ]]; then
 			echo "Error!"
 			exit
 		else 
 			echo "Success!"
 		read -p "Shall we have a look in your browser now? (y/n): " op
 			if [ $op = "y" ]; then
-			xdg-open $fsite/u/$fuser
+			xdg-open $rurl/channel/$chan
 			fi
 		fi
 	fi
+fi
+fi
 fi
 fi
 fi

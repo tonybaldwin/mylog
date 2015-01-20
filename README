@@ -2,7 +2,8 @@ mylog.sh
 a simple dream log management system in bash
 by tony baldwin - www.tonybaldwin.me
 
-mylog site: http://tonyb.us/mylog
+mylog site: http://wiki.tonybaldwin.me/doku.php/hax/bash/mylog
+github: https://github.com/tonybaldwin/mylog
 
 INSTALLATION:
 run the install.sh
@@ -22,10 +23,10 @@ mylog management system by tony baldwin, http://tonybaldwin.me, released accordi
 
 
 MORE INFORMATION: A more thorough installation and use description 
-is on my wiki at http://tonyb.us/mylog
+is on my wiki at http://wiki.tonybaldwin.me/doku.php/hax/bash/mylog 
 
 LICENSE:
-This program was written by anthony baldwin - tony@tonybaldwin.org 
+This program was written by tony baldwin, http://tonybaldwin.me
 This program is free software; you can redistribute it and/or modify 
 it under the terms of the GNU General Public License as published by 
 the Free Software Foundation; either version 2 of the License, or 

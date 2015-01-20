@@ -1,0 +1,10 @@
+Changelog for mylog.sh
+----------------------------
+Tue Jan 20 02:21:36 CET 2015
+
+ - removed friendica plugin
+ - added redmatrix plugin
+ - updated install.sh
+	tonybaldwin
+---------------------------
+
